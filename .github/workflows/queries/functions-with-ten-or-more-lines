@@ -6,11 +6,11 @@
  */
 import javascript
 
-predicate isFunctionWithTenOrMoreLines(FunctionDeclaration function) {
-  return function.getLinesOfCode() >= 10
+predicate isFunctionWithTenOrMoreLines(Function function) {
+  return function.getNumberOfLines() >= 10
 }
 
-from FunctionDeclaration function
+from Function function
 where isFunctionWithTenOrMoreLines(function)
 select function, "function with ten or more lines of code"
 
