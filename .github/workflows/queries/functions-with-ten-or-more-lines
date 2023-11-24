@@ -1,0 +1,16 @@
+/**
+ * @description Find all functions with ten or more lines of code
+ * @kind problem
+ * @id javascript/functions-with-ten-or-more-lines
+ * @problem.severity recommendation
+ */
+import javascript
+
+predicate isFunctionWithTenOrMoreLines(FunctionDeclaration function) {
+  return function.getLinesOfCode() >= 10
+}
+
+from FunctionDeclaration function
+where isFunctionWithTenOrMoreLines(function)
+select function, "function with ten or more lines of code"
+
