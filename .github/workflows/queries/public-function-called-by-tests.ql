@@ -37,5 +37,5 @@ exists(MethodDefinition md | md.isPublic() and md.getBody() = f)
 
 from Function test, Function callee
 where isTest(test) and
-      (calls(test, callee) or calls+(test,calle))
+      (calls(test, callee) or calls+(test,callee))
 select callee, "is called by tests"
